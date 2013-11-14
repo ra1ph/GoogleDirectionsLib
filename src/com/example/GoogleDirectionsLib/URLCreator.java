@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Time: 17:09
  */
 public class URLCreator {
-    public static String getUrl(ArrayList<String> points) {
+    public static String getUrl(ArrayList<String> points, DirectionOption options) {
         String str_origin = "origin=" + codeName(points.get(0));
 
         // Destination of route
@@ -34,7 +34,7 @@ public class URLCreator {
         }
 
         // Building the parameters to the web service
-        String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + waypoints;
+        String parameters = str_origin + "&" + str_dest + getOptions(options) + "&" + waypoints;
 
         // Output format
         String output = "json";
@@ -44,6 +44,53 @@ public class URLCreator {
         String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
 
         return url;
+    }
+
+    public static String getUrl(LatLng current, ArrayList<String> points, DirectionOption options) {
+        String str_origin = "origin=" + codeName(current.latitude + "," + current.longitude);
+
+        // Destination of route
+        String str_dest = "destination=" + codeName(points.get(points.size() - 1));
+
+        // Sensor enabled
+        String sensor = "sensor=false";
+
+        // Waypoints
+        String waypoints = "";
+
+        if (points.size() > 1)
+            waypoints = "waypoints=";
+
+        for (int i=0; i < points.size() - 1; i++) {
+            String point = points.get(i);
+            waypoints += codeName(point) + "|";
+        }
+
+        // Building the parameters to the web service
+        String parameters = str_origin + "&" + str_dest + getOptions(options) + "&" + waypoints;
+
+        // Output format
+        String output = "json";
+
+
+        // Building the url to the web service
+        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
+
+        return url;
+    }
+
+    private static String getOptions(DirectionOption options) {
+        StringBuilder builder = new StringBuilder("&sensor=false");
+        builder.append("&mode=");
+        builder.append(options.getTravelMode().toString().toLowerCase());
+        builder.append("&units=");
+        builder.append(options.getUnit().toString().toLowerCase());
+        builder.append("&alternatives=");
+        builder.append(Boolean.toString(options.isAlternatives()).toLowerCase());
+        builder.append("&language=");
+        builder.append(options.getLanguage());
+        builder.append("&");
+        return builder.toString();
     }
 
     private static String codeName(String s) {
