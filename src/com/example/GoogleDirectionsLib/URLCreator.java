@@ -96,7 +96,7 @@ public class URLCreator {
     private static String codeName(String s) {
         String urlEncoded = null;
         try {
-            urlEncoded = URLEncoder.encode(s.replaceAll(" ", "%20"), "UTF-8");
+            urlEncoded = URLEncoder.encode(s, "UTF-8");
             //urlEncoded = output + "?" + parameters;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
