@@ -1,6 +1,4 @@
-package com.example.GoogleDirectionsLib;
-
-import java.util.Date;
+package com.example.googledirectionslib;
 
 /**
  * Created with IntelliJ IDEA.

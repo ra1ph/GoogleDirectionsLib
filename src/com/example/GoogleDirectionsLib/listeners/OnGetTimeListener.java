@@ -1,4 +1,4 @@
-package com.example.GoogleDirectionsLib.listeners;
+package com.example.googledirectionslib.listeners;
 
 /**
  * Created with IntelliJ IDEA.

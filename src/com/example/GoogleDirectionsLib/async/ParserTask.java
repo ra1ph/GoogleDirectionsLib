@@ -1,13 +1,9 @@
-package com.example.GoogleDirectionsLib.async;
+package com.example.googledirectionslib.async;
 
 import android.os.AsyncTask;
-import com.example.GoogleDirectionsLib.data.Route;
-import com.example.GoogleDirectionsLib.json.Parser;
-import com.example.GoogleDirectionsLib.json.RoutesParser;
-import com.example.GoogleDirectionsLib.listeners.BaseListener;
+import com.example.googledirectionslib.json.Parser;
+import com.example.googledirectionslib.listeners.BaseListener;
 import org.json.JSONObject;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.

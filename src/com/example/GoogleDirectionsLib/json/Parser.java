@@ -1,4 +1,4 @@
-package com.example.GoogleDirectionsLib.json;
+package com.example.googledirectionslib.json;
 
 import org.json.JSONObject;
 

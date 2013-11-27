@@ -1,14 +1,10 @@
-package com.example.GoogleDirectionsLib;
+package com.example.googledirectionslib;
 
-import android.widget.TimePicker;
-import com.example.GoogleDirectionsLib.async.DownloadTask;
-import com.example.GoogleDirectionsLib.data.Leg;
-import com.example.GoogleDirectionsLib.data.Route;
-import com.example.GoogleDirectionsLib.json.RoutesParser;
-import com.example.GoogleDirectionsLib.listeners.BaseListener;
-import com.example.GoogleDirectionsLib.listeners.OnGetDistanceListener;
-import com.example.GoogleDirectionsLib.listeners.OnGetTimeDistanceListener;
-import com.example.GoogleDirectionsLib.listeners.OnGetTimeListener;
+import com.example.googledirectionslib.async.DownloadTask;
+import com.example.googledirectionslib.data.Leg;
+import com.example.googledirectionslib.data.Route;
+import com.example.googledirectionslib.json.RoutesParser;
+import com.example.googledirectionslib.listeners.*;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -79,6 +75,20 @@ public class GoogleDirections {
                         }
                     }
                     listener.onGetTimeDistanceListener(time, distance);
+                } else throw new ClassCastException();
+            }
+        });
+        downloadTask.execute(url);
+    }
+
+    public void getRouteObjects(LatLng current, ArrayList<String> points,DirectionOption options,final OnGetRouteListener listener){
+        String url = URLCreator.getUrl(current,points,options);
+
+        DownloadTask downloadTask = new DownloadTask(new RoutesParser(),new BaseListener() {
+            @Override
+            public void onWorkDone(Object result) {
+                if(result instanceof ArrayList){
+                    listener.onGetRouteListener((ArrayList<Route>) result);
                 } else throw new ClassCastException();
             }
         });

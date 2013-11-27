@@ -1,17 +1,15 @@
-package com.example.GoogleDirectionsLib.json;
+package com.example.googledirectionslib.json;
 
-import com.example.GoogleDirectionsLib.DirectionOption;
-import com.example.GoogleDirectionsLib.data.Leg;
-import com.example.GoogleDirectionsLib.data.Route;
-import com.example.GoogleDirectionsLib.data.Step;
+import com.example.googledirectionslib.DirectionOption;
+import com.example.googledirectionslib.data.Leg;
+import com.example.googledirectionslib.data.Route;
+import com.example.googledirectionslib.data.Step;
 import com.google.android.gms.maps.model.LatLng;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**

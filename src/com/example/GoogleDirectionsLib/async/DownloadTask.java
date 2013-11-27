@@ -1,9 +1,9 @@
-package com.example.GoogleDirectionsLib.async;
+package com.example.googledirectionslib.async;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import com.example.GoogleDirectionsLib.json.Parser;
-import com.example.GoogleDirectionsLib.listeners.BaseListener;
+import com.example.googledirectionslib.json.Parser;
+import com.example.googledirectionslib.listeners.BaseListener;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 
 /**
  * Created with IntelliJ IDEA.

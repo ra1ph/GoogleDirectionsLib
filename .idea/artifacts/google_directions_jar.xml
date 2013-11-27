@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="google-directions:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/google_directions_jar</output-path>
+    <root id="archive" name="GoogleDirectionsLib.jar">
+      <element id="module-output" name="google-directions" />
+      <element id="module-output" name="google-play-services_lib" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/contrib/google-play-services_lib/libs/google-play-services.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,6 +1,6 @@
-package com.example.GoogleDirectionsLib.data;
+package com.example.googledirectionslib.data;
 
-import com.example.GoogleDirectionsLib.DirectionOption;
+import com.example.googledirectionslib.DirectionOption;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.List;

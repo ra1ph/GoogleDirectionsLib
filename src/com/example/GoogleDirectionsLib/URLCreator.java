@@ -1,4 +1,4 @@
-package com.example.GoogleDirectionsLib;
+package com.example.googledirectionslib;
 
 import com.google.android.gms.maps.model.LatLng;
 
